@@ -19,7 +19,7 @@ if (process.env.REACT_APP_ENV_NAME === 'mock') {
 
 ReactDOM.render(
   <React.StrictMode>
-    <LoginPage />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
