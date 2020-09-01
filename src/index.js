@@ -3,10 +3,23 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { Server } from "miragejs"
+import LoginPage from './pages/login/LoginPage'
+console.log(process.env.REACT_APP_ENV_NAME)
+if (process.env.REACT_APP_ENV_NAME === 'mock') {
+  /**
+   * Mock server 
+   */
+  console.log('Starting mock server.')
+  let server = new Server()
+  server.get("/api/users", { users: [{ id: 1, name: "Bob" }] })
+  console.log()
+}
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <LoginPage />
   </React.StrictMode>,
   document.getElementById('root')
 );

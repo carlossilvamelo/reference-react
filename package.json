@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -14,7 +16,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev:mock": "env-cmd -f .env.mock react-scripts start --port 3000 && echo \"Ambiente para desenvolvimento frontEnd consumindo servidor de mock\"",
+    "dev:front": "env-cmd -f .env.front react-scripts start --port 3000 && echo \"Ambiente para desenvolvimento frontEnd consumindo API na nuvem\"",
+    "dev:fullstack": "env-cmd -f .env.fullstack react-scripts start --port 3000 && echo \"Ambiente para desenvolvimento frontEnd consumindo a API Localhost\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,5 +35,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0",
+    "miragejs": "^0.1.40"
   }
 }
